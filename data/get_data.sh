@@ -15,7 +15,7 @@ TARGET_DIR=./$FILE/
 wget -N $URL -O $TAR_FILE
 mkdir $TARGET_DIR
 #tar -zxvf $TAR_FILE -C ./
-unzip $TAR_FILE -d ./FILE
+unzip $TAR_FILE -d ./$FILE
 rm $TAR_FILE
 
 python process_data.py $FILE
