@@ -129,7 +129,7 @@ for epoch in range(niter):
 
         print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f D(x): %.4f D(G(z)): %.4f / %.4f'
               % (epoch, niter, i, n_batch,
-                 errD.data[0], errG.data[0], D_x, D_G_z1, D_G_z2))
+                 errD.data, errG.data, D_x, D_G_z1, D_G_z2))
         if i % 100 == 0:
             vutils.save_image(real.data,
                               'unconditional_ims/real_samples.png',
