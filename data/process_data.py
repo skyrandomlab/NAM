@@ -8,7 +8,8 @@
 import sys
 import os
 import numpy as np
-import scipy.misc as misc
+#import scipy.misc as misc
+import cv2
 
 dataset_name = sys.argv[1]
 fn = "%s/train" % dataset_name
@@ -18,8 +19,8 @@ x = np.zeros((n, 64, 64, 3), dtype="uint8")
 y = np.zeros((n, 64, 64, 3), dtype="uint8")
 
 for i in range(n):
-    im = misc.imread("%s/train/%s" % (dataset_name, ls[i]))
-    im = misc.imresize(im, (64, 128))
+    im = cv2.imread("%s/train/%s" % (dataset_name, ls[i]))
+    im = cv2.resize(im, (128, 64))
     x[i] = im[:, 64:]
     y[i] = im[:, :64]
 
